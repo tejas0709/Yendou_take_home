@@ -1,12 +1,32 @@
 :root {
-  --bg: #0f1720;
-  --fg: #e6edf3;
-}
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #050816;
+  color: #E2E8F0;
 }
 
-body { font-family: Inter, system-ui, Arial, sans-serif; }
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 18%), radial-gradient(circle at 80% 12%, rgba(139, 92, 246, 0.14), transparent 18%), #050816;
+  color: #E2E8F0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: inherit;
+  line-height: 1.5;
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

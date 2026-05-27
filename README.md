@@ -1,23 +1,25 @@
 # Yendou — Counter Take-home
 
-This repository contains the initial TypeScript React project for the Yendou take-home assignment.
+A polished React + TypeScript counter app built for the Yendou SWE assignment.
 
-What this commit contains:
-- A minimal Vite + React + TypeScript project
-- Useful npm scripts to start and build the app
+## What’s included
 
-How to run locally:
+- Global `CounterContext` with `CounterProvider`
+- `useCounter()` hook exposing `count`, `increment()`, and `reset()`
+- Animated, responsive counter UI with futuristic dark glassmorphism styling
+- Chakra UI toast notifications using a custom premium-designed toast component
+- Local persistence so the counter survives page refreshes
 
-1. Install dependencies
+## Run locally
 
 ```bash
+cd "C:\Users\dell\Downloads\tj\yendou"
 npm install
-```
-
-2. Start the dev server
-
-```bash
 npm run dev
 ```
 
-Planned next work: implement `CounterContext`, `useCounter` hook, `Counter` component, and toast UI.
+Then open the URL shown in the terminal, usually `http://localhost:5173`.
+
+## Notes
+
+This project is intentionally built with clean component structure, accessible focus states, and a modern visual system that matches the Yendou design direction.
