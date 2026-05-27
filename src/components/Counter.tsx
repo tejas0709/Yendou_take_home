@@ -1,39 +1,33 @@
 import React from 'react'
 import useCounter from '../hooks/useCounter'
+import { Button, Box, Text, useToast } from '@chakra-ui/react'
 
 export default function Counter() {
   const { count, increment } = useCounter()
+  const toast = useToast()
+
+  const handleClick = () => {
+    const next = count + 1
+    increment()
+    toast({
+      title: 'Counter updated',
+      description: `${next}`,
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+      position: 'top-right'
+    })
+  }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-      <div
-        style={{
-          fontSize: 36,
-          fontWeight: 600,
-          color: '#FFFFFF',
-          minWidth: 80,
-          textAlign: 'center'
-        }}
-        aria-live="polite"
-      >
+    <Box display="flex" flexDirection="column" alignItems="center" gap={3}>
+      <Text fontSize="4xl" fontWeight={600} color="white" minW="80px" textAlign="center" aria-live="polite">
         {count}
-      </div>
+      </Text>
 
-      <button
-        onClick={increment}
-        style={{
-          appearance: 'none',
-          border: 'none',
-          background: '#2B6CB0',
-          color: 'white',
-          padding: '10px 16px',
-          borderRadius: 8,
-          fontSize: 16,
-          cursor: 'pointer'
-        }}
-      >
+      <Button onClick={handleClick} colorScheme="blue" borderRadius="8">
         +1
-      </button>
-    </div>
+      </Button>
+    </Box>
   )
 }
