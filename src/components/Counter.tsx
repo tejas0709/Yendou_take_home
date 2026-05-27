@@ -1,6 +1,7 @@
 import React from 'react'
 import useCounter from '../hooks/useCounter'
 import { Button, Box, Text, useToast } from '@chakra-ui/react'
+import CustomToast from './CustomToast'
 
 export default function Counter() {
   const { count, increment } = useCounter()
@@ -10,12 +11,10 @@ export default function Counter() {
     const next = count + 1
     increment()
     toast({
-      title: 'Counter updated',
-      description: `${next}`,
-      status: 'success',
       duration: 3000,
       isClosable: true,
-      position: 'top-right'
+      position: 'top-right',
+      render: ({ onClose }) => <CustomToast value={`+${next}`} onClose={onClose} />
     })
   }
 
