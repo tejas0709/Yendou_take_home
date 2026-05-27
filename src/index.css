@@ -1,0 +1,12 @@
+:root {
+  --bg: #0f1720;
+  --fg: #e6edf3;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body { font-family: Inter, system-ui, Arial, sans-serif; }
